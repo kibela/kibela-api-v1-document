@@ -13,6 +13,7 @@ Kibela Web API は、Kibelaのデータにアクセスするツールを開発�
 - [アクセストークン](#アクセストークン)
 - [エンドポイント](#エンドポイント)
 - [リクエストヘッダ](#リクエストヘッダ)
+  - [MessagePack](#messagepack)
 - [サンプルコード](#サンプルコード)
 - [利用制限](#利用制限)
   - [1秒あたりのリクエスト数](#1秒あたりのリクエスト数)
@@ -52,6 +53,16 @@ Kibela Web APIは[GraphQL](https://graphql.org/) APIとして提供されてい�
 * `Accept: aplication/json`
 
 また、`User-Agent` ヘッダは指定することを奨励します。 `User-Agent` はアクセストークンごとの使用履歴にも記録されます。
+
+### MessagePack
+
+リクエストとレスポンスはそれぞれ[MessagePack](https://msgpack.org/)フォーマットも利用できます。
+
+リクエストをMessagePackにする場合は`Content-Type: application/x-msgpack`を、レスポンスをMessagePackにする場合は`Accept: application/x-msgpack`をそれぞれ指定してください。
+
+なお現在のところ、エラーレスポンスは`Accept: application/x-msgpack`を指定していた場合でもJSONを返すことがあります。必ずレスポンスヘッダの`Content-Type`をみてデコードしてください。
+
+MessagePackはJSONよりもデータサイズが小さく処理も速いため、運用フェーズではなるべくMessagePackを使うことを奨励します。
 
 ## サンプルコード
 
@@ -135,8 +146,7 @@ Kibela Web APIは過剰な負荷を避けるためにいくつかの利用制限
 
 Web APIは現在β版です。将来的に次のような拡張を予定しています。
 
-* シリアライザとしてMessagePackのサポート
 * OAuth 2.0 への対応
-* Access Tokenをreadonlyでチーム全体に公開するか検討中
+* Access Token自体の情報をreadonlyでチーム全体に公開するか検討中
 * Web APIの使用ログの閲覧（トークンの所有者のみ）
 * Web API利用制限・予算管理の調整
