@@ -127,7 +127,7 @@ Kibela Web APIは過剰な負荷を避けるためにいくつかの利用制限
   "errors": [
     {
       "extensions": {
-        "code": "REQUEST_LIMIT_EXCEEDED",
+        "code": "TOKEN_BUDGET_EXHAUSTED",
         "waitMilliseconds": 1000,
       }
     }
