@@ -30,7 +30,7 @@ Kibela Web API は、Kibelaのデータにアクセスするツールを開発�
 
 ## 概要
 
-Kibela Web APIは[GraphQL](https://graphql.org/) APIとして提供されています。
+Kibela Web APIは[GraphQL](https://graphql.org/)として提供されています。また、GraphQLの拡張仕様である[Relay GraphQL Server Specification](https://facebook.github.io/relay/docs/en/graphql-server-specification.html)にも準拠しています。
 
 ## アクセストークン
 
