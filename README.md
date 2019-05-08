@@ -64,11 +64,11 @@ https://my.kibe.la/settings/access_tokens
 
 リクエストとレスポンスはそれぞれ[MessagePack](https://msgpack.org/)フォーマットも利用できます。
 
-リクエストをMessagePackにする場合は`Content-Type: application/x-msgpack`を、レスポンスをMessagePackにする場合は`Accept: application/x-msgpack`をそれぞれ指定してください。
+リクエストをMessagePackにする場合は`Content-Type: application/x-msgpack`を、レスポンスをMessagePackにする場合は`Accept: application/x-msgpack, application/json`をそれぞれ指定してください。
 
-なお現在のところ、エラーレスポンスは`Accept: application/x-msgpack`を指定していた場合でもJSONを返すことがあります。必ずレスポンスヘッダの`Content-Type`をみてデコードしてください。
+なお現在のところ、エラーレスポンスはJSONを返すことがあります。必ずレスポンスヘッダの`Content-Type`をみてデコードしてください。
 
-MessagePackはJSONよりもデータサイズが小さく処理も速いため、運用フェーズではなるべくMessagePackを使うことを奨励します。
+MessagePackはバイナリの転送においてオーバーヘッドがなく、また多くのMessagePack処理系においてレスポンスボディのストリーミングデコードが可能であるためJSONよりも遥かに高速にリクエスト・レスポンス処理を行えます。Kibela Web APIを利用するツールは、特に運用フェーズではなるべくMessagePackを使うことを奨励します。
 
 ## リクエストボディ
 
