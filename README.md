@@ -13,6 +13,7 @@ Kibela Web API は、Kibelaのデータにアクセスするツールを開発�
 - [アクセストークン](#アクセストークン)
 - [エンドポイント](#エンドポイント)
 - [リクエストヘッダ](#リクエストヘッダ)
+  - [JSON](#json)
   - [MessagePack](#messagepack)
 - [リクエストボディ](#リクエストボディ)
 - [サンプルコード](#サンプルコード)
@@ -55,10 +56,17 @@ https://my.kibe.la/settings/access_tokens
 次のヘッダを指定してください。 `${ACCESS_TOKEN}` はアクセストークンに置き換えてください。
 
 * `Authorization: Bearer ${ACCESS_TOKEN}`
-* `Content-Type: application/json`
-* `Accept: aplication/json`
+* `Content-Type: application/json` or `Content-Type: application/x-msgpack`
+* `Accept: aplication/json` or `Accept: application/x-msgpack, application/json`
 
 また、`User-Agent` ヘッダは指定することを奨励します。 `User-Agent` はアクセストークンごとの使用履歴（ログ）にも記録されます。
+
+### JSON
+
+リクエストやレスポンスでJSONフォーマットを利用する場合は、リクエストヘッダに `Content-Type: application/json` や ``Accept: aplication/json` を指定してください。
+
+* `Content-Type: application/json`
+* `Accept: aplication/json`
 
 ### MessagePack
 
@@ -66,9 +74,14 @@ https://my.kibe.la/settings/access_tokens
 
 リクエストをMessagePackにする場合は`Content-Type: application/x-msgpack`を、レスポンスをMessagePackにする場合は`Accept: application/x-msgpack, application/json`をそれぞれ指定してください。
 
-なお現在のところ、エラーレスポンスはJSONを返すことがあります。必ずレスポンスヘッダの`Content-Type`をみてデコードしてください。
+* `Content-Type: application/x-msgpack`
+* `Accept: application/x-msgpack, application/json`
+
+現在のところ、エラーレスポンスはJSONを返すことがあります。必ずレスポンスヘッダの`Content-Type`をみてデコードしてください。
 
 MessagePackはバイナリの転送においてオーバーヘッドがなく、また多くのMessagePack処理系においてレスポンスボディのストリーミングデコードが可能であるためJSONよりも遥かに高速にリクエスト・レスポンス処理を行えます。Kibela Web APIを利用するツールは、特に運用フェーズではなるべくMessagePackを使うことを奨励します。
+
+なお、MessagePackを利用する場合、Kibela GraphQL schemaにおける `DateTime` 型はMessagePackのtimestamp typeにマップされます。timestamp typeの詳細にういてはお使いのMessagePackシリアライザのドキュメントを参照ください。
 
 ## リクエストボディ
 
