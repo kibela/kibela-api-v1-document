@@ -233,6 +233,7 @@ type Comment implements Node {
   createdAt: DateTime!
   editedAt: DateTime
   id: ID!
+  isEdited: Boolean!
   isLikedByCurrentUser: Boolean!
   likers(
     """
@@ -2445,6 +2446,7 @@ input UpdateCommentInput {
   clientMutationId: String
   content: String!
   id: ID!
+  touch: Boolean = true
 }
 
 """
