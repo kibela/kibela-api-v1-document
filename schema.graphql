@@ -3050,6 +3050,11 @@ input WatchNoteInput {
   """
   clientMutationId: String
   noteId: ID!
+
+  """
+  note_update or comment.
+  """
+  watchedAction: String!
 }
 
 """
