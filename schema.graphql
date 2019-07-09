@@ -813,7 +813,7 @@ type Folder implements Node {
     """
     last: Int
     onlyCoediting: Boolean = false
-    orderBy: NoteOrder = {field: TITLE, direction: ASC}
+    orderBy: NoteOrder = {field: CONTENT_UPDATED_AT, direction: DESC}
   ): NoteConnection!
   path: String!
   pinnedNotes(
@@ -2069,6 +2069,10 @@ type Query {
     """
     last: Int
   ): NoteTemplateConnection!
+
+  """
+  The connection of all the notes in the team. You *should* specify `orderBy` in production.
+  """
   notes(
     """
     Returns the elements in the list that come after the specified cursor.
@@ -2090,7 +2094,7 @@ type Query {
     Returns the last _n_ elements from the list.
     """
     last: Int
-    orderBy: NoteOrder = {field: TITLE, direction: ASC}
+    orderBy: NoteOrder = {field: CONTENT_UPDATED_AT, direction: DESC}
   ): NoteConnection!
   notifications(
     """
