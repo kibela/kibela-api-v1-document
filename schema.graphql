@@ -1444,7 +1444,7 @@ type Mutation {
   updateGroup(input: UpdateGroupInput!): UpdateGroupPayload
 
   """
-  Update a note, trying to merge conflicts
+  Update a note, trying to merge conflicts with the 3-way diff algorithm
   """
   updateNote(input: UpdateNoteInput!): UpdateNotePayload
 
@@ -1500,7 +1500,7 @@ interface Node {
 }
 
 """
-Note (previously called as Blog and Wiki)
+The Note type
 """
 type Note implements Node {
   author: User
