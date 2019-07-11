@@ -1288,7 +1288,9 @@ type Mutation {
   createFolderPin(input: CreateFolderPinInput!): CreateFolderPinPayload
 
   """
-  Create a group
+  Creates a group. The current user is added as a group member.
+
+  It may fail with the `UPGRADE_REQUIRED` error code if the plan is free and there is no room to create a new group.
   """
   createGroup(input: CreateGroupInput!): CreateGroupPayload
 
@@ -1348,7 +1350,10 @@ type Mutation {
   ignoreMultiFactorAuthn(input: IgnoreMultiFactorAuthnInput!): IgnoreMultiFactorAuthnPayload
 
   """
-  Invites a user with their email. Only owners and admins can invite users.
+  Invites a user with their email.
+  Only owners and admins can invite users.
+
+  It may fail with the `UPGRADE_REQUIRED` error code if the plan is free and there is no room to create a new user.
   """
   invite(input: InviteInput!): InvitePayload
 
