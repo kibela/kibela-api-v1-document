@@ -3063,7 +3063,7 @@ input WatchNoteInput {
   """
   note_update or comment.
   """
-  watchedAction: String!
+  watchedAction: WatchState!
 }
 
 """
@@ -3074,4 +3074,12 @@ type WatchNotePayload {
   A unique identifier for the client performing the mutation.
   """
   clientMutationId: String
+}
+
+"""
+State of watching note
+"""
+enum WatchState {
+  WATCH_COMMENT
+  WATCH_NOTE_UPDATE
 }
