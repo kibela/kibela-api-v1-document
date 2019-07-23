@@ -1923,6 +1923,31 @@ type Query {
     """
     revoked: Boolean = false
   ): AccessTokenConnection!
+
+  """
+  The archived groups in the team including private ones
+  """
+  archivedGroups(
+    """
+    Returns the elements in the list that come after the specified cursor.
+    """
+    after: String
+
+    """
+    Returns the elements in the list that come before the specified cursor.
+    """
+    before: String
+
+    """
+    Returns the first _n_ elements from the list.
+    """
+    first: Int
+
+    """
+    Returns the last _n_ elements from the list.
+    """
+    last: Int
+  ): GroupConnection!
   attachmentByPath(
     """
     To get an attachment by its path (`/attachments/:id`)
@@ -1966,7 +1991,7 @@ type Query {
   group(id: ID!): Group!
 
   """
-  All the groups in the team including private ones
+  The active groups in the team including private ones
   """
   groups(
     """
