@@ -13,6 +13,7 @@ type AccessToken implements Node {
   isActive: Boolean!
   isRevoked: Boolean!
   lastUsedAt: DateTime
+  path: String!
   scopes: [AccessTokenScope!]!
   title: String!
 
@@ -1897,6 +1898,7 @@ type PageInfo {
 The top-level query type to Kibela resources
 """
 type Query {
+  accessToken(id: ID!): AccessToken!
   accessTokens(
     """
     Returns the elements in the list that come after the specified cursor.
