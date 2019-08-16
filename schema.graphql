@@ -13,6 +13,27 @@ type AccessToken implements Node {
   isActive: Boolean!
   isRevoked: Boolean!
   lastUsedAt: DateTime
+  logs(
+    """
+    Returns the elements in the list that come after the specified cursor.
+    """
+    after: String
+
+    """
+    Returns the elements in the list that come before the specified cursor.
+    """
+    before: String
+
+    """
+    Returns the first _n_ elements from the list.
+    """
+    first: Int
+
+    """
+    Returns the last _n_ elements from the list.
+    """
+    last: Int
+  ): AccessTokenLogConnection!
   path: String!
   scopes: [AccessTokenScope!]!
   title: String!
@@ -63,6 +84,56 @@ type AccessTokenEdge {
   The item at the end of the edge.
   """
   node: AccessToken
+}
+
+"""
+Usage logs for personal access tokens
+"""
+type AccessTokenLog implements Node {
+  accessToken: AccessToken!
+  createdAt: DateTime!
+  id: ID!
+  ipAddress: String!
+  operationType: String!
+  query: String!
+  user: User!
+  userAgent: String!
+}
+
+"""
+The connection type for AccessTokenLog.
+"""
+type AccessTokenLogConnection {
+  """
+  A list of edges.
+  """
+  edges: [AccessTokenLogEdge]
+
+  """
+  A list of nodes.
+  """
+  nodes: [AccessTokenLog]
+
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+"""
+An edge in a connection.
+"""
+type AccessTokenLogEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge.
+  """
+  node: AccessTokenLog
 }
 
 enum AccessTokenScope {
@@ -2183,6 +2254,31 @@ type Query {
     last: Int
     query: String!
   ): SearchResultConnection!
+
+  """
+  All the access token logs in the team. This feature requires the administrative privileges
+  """
+  teamAccessTokenLogs(
+    """
+    Returns the elements in the list that come after the specified cursor.
+    """
+    after: String
+
+    """
+    Returns the elements in the list that come before the specified cursor.
+    """
+    before: String
+
+    """
+    Returns the first _n_ elements from the list.
+    """
+    first: Int
+
+    """
+    Returns the last _n_ elements from the list.
+    """
+    last: Int
+  ): AccessTokenLogConnection!
   user(id: ID!): User
   userByAccount(account: String!): User
   users(
