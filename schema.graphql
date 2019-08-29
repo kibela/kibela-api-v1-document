@@ -2188,6 +2188,12 @@ type Query {
     """
     last: Int
   ): NoteBrowsingHistoryConnection!
+  noteFromPath(
+    """
+    Note path (`/notes/:id` or `/@:account/:id`) or URL (`https://my.kibe.la/:path`).
+    """
+    path: String!
+  ): Note!
   noteTemplate(id: ID!): NoteTemplate
   noteTemplates(
     """
@@ -2318,7 +2324,8 @@ type Query {
     last: Int
   ): AccessTokenLogConnection!
   user(id: ID!): User
-  userByAccount(account: String!): User
+  userByAccount(account: String!): User @deprecated(reason: "Use Query.userFromAccount instead")
+  userFromAccount(account: String!): User
   users(
     """
     Returns the elements in the list that come after the specified cursor.
