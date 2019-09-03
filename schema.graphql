@@ -2064,6 +2064,12 @@ type Query {
     To get an attachment by its path (`/attachments/:id`)
     """
     path: String!
+  ): Attachment! @deprecated(reason: "Use `Query.attachmentFromPath` instead. This method will be deleted in August 2020.")
+  attachmentFromPath(
+    """
+    To get an attachment from its path (`/attachments/:id`) or URL
+    """
+    path: String!
   ): Attachment!
   budget: Budget!
   comment(id: ID!): Comment
@@ -2324,7 +2330,7 @@ type Query {
     last: Int
   ): AccessTokenLogConnection!
   user(id: ID!): User
-  userByAccount(account: String!): User @deprecated(reason: "Use Query.userFromAccount instead")
+  userByAccount(account: String!): User @deprecated(reason: "Use Query.userFromAccount instead. This method will be deleted in August 2020.")
   userFromAccount(account: String!): User
   users(
     """
