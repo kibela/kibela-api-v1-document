@@ -63,7 +63,7 @@ https://my.kibe.la/settings/access_tokens
 
 ### JSON
 
-リクエストやレスポンスでJSONフォーマットを利用する場合は、リクエストヘッダに `Content-Type: application/json` や ``Accept: aplication/json` を指定してください。
+リクエストやレスポンスでJSONフォーマットを利用する場合は、リクエストヘッダに `Content-Type: application/json` や `Accept: aplication/json` を指定してください。
 
 * `Content-Type: application/json`
 * `Accept: aplication/json`
