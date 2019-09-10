@@ -1,7 +1,5 @@
 # Kibela Web API
 
-※ Kibela Web API は現在β版です。仕様は予告なく変更することがあります。
-
 Kibela Web API は、Kibelaのデータにアクセスするツールを開発するためのWeb APIです。他サービスからKibelaへのインポートツールなどを想定しています。
 
 ## Table of Contents
