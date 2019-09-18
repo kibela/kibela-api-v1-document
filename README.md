@@ -183,9 +183,8 @@ https://github.com/kibela/kibela-api-v1-document/issues
 
 ## 今後の展望
 
-Web APIは現在β版です。将来的に次のような拡張を予定しています。
+将来的に次のような拡張を予定しています。
 
 * OAuth 2.0 への対応
 * Access Token自体の情報をreadonlyでチーム全体に公開するか検討中
-* Web APIの使用ログの閲覧（トークンの所有者のみ）
 * Web API利用制限・予算管理の調整
