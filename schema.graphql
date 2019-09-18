@@ -276,6 +276,7 @@ A comment that belongs to a Note
 type Comment implements Node {
   anchor: String!
   author: User!
+  canBeLiked: Boolean!
   content: String!
   contentHtml: String!
   contentSummaryHtml: String!
@@ -1646,7 +1647,9 @@ The Note type
 """
 type Note implements Node {
   author: User
+  canBeCommented: Boolean!
   canBeDestroyed: Boolean!
+  canBeLiked: Boolean!
   canBeUpdated: Boolean!
   coediting: Boolean!
   comments(
@@ -1704,6 +1707,7 @@ type Note implements Node {
   folderName: String
   groups: [Group!]!
   id: ID!
+  isArchived: Boolean!
   isLikedByCurrentUser: Boolean!
   likers(
     """
