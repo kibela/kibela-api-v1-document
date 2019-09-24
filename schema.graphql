@@ -2259,6 +2259,8 @@ type Query {
   The connection of all the notes in the team. You *should* specify `orderBy` in production.
   """
   notes(
+    active: Boolean = true
+
     """
     Returns the elements in the list that come after the specified cursor.
     """
