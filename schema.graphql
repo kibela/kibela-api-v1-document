@@ -1064,6 +1064,7 @@ type Group implements Node {
     Returns the last _n_ elements from the list.
     """
     last: Int
+    orderBy: NoteOrder = {field: CONTENT_UPDATED_AT, direction: DESC}
   ): NoteConnection!
   path: String!
   pinnedNotes: [Note!]!
