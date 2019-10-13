@@ -55,16 +55,16 @@ https://my.kibe.la/settings/access_tokens
 
 * `Authorization: Bearer ${ACCESS_TOKEN}`
 * `Content-Type: application/json` or `Content-Type: application/x-msgpack`
-* `Accept: aplication/json` or `Accept: application/x-msgpack, application/json`
+* `Accept: application/json` or `Accept: application/x-msgpack, application/json`
 
 また、`User-Agent` ヘッダは指定することを奨励します。 `User-Agent` はアクセストークンごとの使用履歴（ログ）にも記録されます。
 
 ### JSON
 
-リクエストやレスポンスでJSONフォーマットを利用する場合は、リクエストヘッダに `Content-Type: application/json` や `Accept: aplication/json` を指定してください。
+リクエストやレスポンスでJSONフォーマットを利用する場合は、リクエストヘッダに `Content-Type: application/json` や `Accept: application/json` を指定してください。
 
 * `Content-Type: application/json`
-* `Accept: aplication/json`
+* `Accept: application/json`
 
 ### MessagePack
 
