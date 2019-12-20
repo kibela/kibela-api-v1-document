@@ -2211,7 +2211,7 @@ type Query {
   """
   currentUser: User
   defaultGroup: Group
-  feedSections(after: String, first: Int, groupId: ID, kind: FeedKind): FeedSectionSimpleConnection!
+  feedSections(after: String, first: Int!, groupId: ID, kind: FeedKind): FeedSectionSimpleConnection!
   folder(id: ID!): Folder
   folders(
     active: Boolean = true
