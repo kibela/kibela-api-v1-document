@@ -2428,15 +2428,33 @@ type Query {
     before: String
 
     """
+    `true`/`false` to get coediting enabled/disabled notes. `null` to get all.
+    """
+    coediting: Boolean
+
+    """
     Returns the first _n_ elements from the list.
     """
     first: Int
+    folderIds: [ID!]
+    groupIds: [ID!]
+    isArchived: Boolean = false
 
     """
     Returns the last _n_ elements from the list.
     """
     last: Int
     query: String!
+
+    """
+    Searching target period of time.
+    """
+    updated: SearchDate
+
+    """
+    Array of authors' User ID.
+    """
+    userIds: [ID!]
   ): SearchResultConnection!
 
   """
@@ -2648,6 +2666,13 @@ enum Role {
   FULL_MEMBER
   GUEST
   OWNER
+}
+
+enum SearchDate {
+  WITHIN_1_MONTH
+  WITHIN_1_WEEK
+  WITHIN_3_DAYS
+  WITHIN_6_MONTHS
 }
 
 """
