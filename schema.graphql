@@ -1590,7 +1590,7 @@ type Mutation {
   """
   Creates a draft review comment
   """
-  createReviewableDraftComment(input: CreateReviewableDraftCommentInput!): CreateReviewableDraftCommentPayload @deprecated(reason: "Under development and returns no permission error for now.")
+  createReviewableDraftComment(input: CreateReviewableDraftCommentInput!): CreateReviewableDraftCommentPayload
 
   """
   It deletes an attachment that is owned by the current user.
@@ -1615,7 +1615,7 @@ type Mutation {
   """
   Disable draft review of the specified note.
   """
-  disableDraftReview(input: DisableDraftReviewInput!): DisableDraftReviewPayload @deprecated(reason: "Under development and returns no permission error for now.")
+  disableDraftReview(input: DisableDraftReviewInput!): DisableDraftReviewPayload
 
   """
   Disable Outgoing Webhook
@@ -1635,7 +1635,7 @@ type Mutation {
   """
   Enable draft review of the specified note.
   """
-  enableDraftReview(input: EnableDraftReviewInput!): EnableDraftReviewPayload @deprecated(reason: "Under development and returns no permission error for now.")
+  enableDraftReview(input: EnableDraftReviewInput!): EnableDraftReviewPayload
 
   """
   Enable Outgoing Webhook
