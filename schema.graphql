@@ -1729,7 +1729,7 @@ type Mutation {
   """
   Creates a reply to the comment
   """
-  createCommentReply(input: CreateCommentReplyInput!): CreateCommentReplyPayload @deprecated(reason: "Under development and returns no permission error for now.")
+  createCommentReply(input: CreateCommentReplyInput!): CreateCommentReplyPayload
 
   """
   It creates a disabled user with the specified profile. It requires  **administrative privileges**.
