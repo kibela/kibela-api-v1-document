@@ -3438,6 +3438,11 @@ input UpdateNoteInput {
   draft: Boolean!
   id: ID!
   newNote: NoteInput!
+
+  """
+  It will be truncated to 100 characters if exceeded.
+  """
+  noteEditMemo: String
 }
 
 """
