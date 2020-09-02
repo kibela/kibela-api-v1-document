@@ -105,7 +105,7 @@ curl "https://${SUBDOMAIN}.kibe.la/api/v1" \
   -X POST \
   -d '{"query": "query { currentUser { realName } }", "variables": {}}' \
   -H 'Accept: application/json' \
-  -H 'Content-Type: application/json'
+  -H 'Content-Type: application/json' \
   -H 'User-Agent: KibelaAPITestFromCurl'
 ```
 
