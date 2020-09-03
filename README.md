@@ -93,6 +93,22 @@ MessagePackはバイナリの転送においてオーバーヘッドがなく、
 
 * TypeScript: https://github.com/kibela/hello-kibela.ts
 
+またcurlを用いたシンプルな例を次に示します。
+お使いのKibelaのサブドメイン名と個人用アクセストークンをセットした上で実行できます。
+
+```bash
+export SUBDOMAIN='YOUR-SUBDOMAIN'
+export SECRET='secret/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+
+curl "https://${SUBDOMAIN}.kibe.la/api/v1" \
+  -H "Authorization: Bearer ${SECRET}" \
+  -X POST \
+  -d '{"query": "query { currentUser { realName } }", "variables": {}}' \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'User-Agent: KibelaAPITestFromCurl'
+```
+
 ## 利用制限
 
 Kibela Web APIは過剰な負荷を避けるためにいくつかの利用制限を掛けています。
