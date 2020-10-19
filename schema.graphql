@@ -1834,7 +1834,7 @@ type Mutation {
   """
   Creates a custom emoji
   """
-  createCustomEmoji(input: CreateCustomEmojiInput!): CreateCustomEmojiPayload @deprecated(reason: "Under development and returns no permission error for now.")
+  createCustomEmoji(input: CreateCustomEmojiInput!): CreateCustomEmojiPayload
 
   """
   It creates a disabled user with the specified profile. It requires  **administrative privileges**.
