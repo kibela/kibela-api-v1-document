@@ -2576,12 +2576,6 @@ type Query {
     """
     last: Int
   ): GroupConnection!
-  attachmentByPath(
-    """
-    To get an attachment by its path (`/attachments/:id`)
-    """
-    path: String!
-  ): Attachment! @deprecated(reason: "Use `Query.attachmentFromPath` instead. This method will be deleted in August 2020.")
   attachmentFromPath(
     """
     To get an attachment from its path (`/attachments/:id`) or URL
@@ -2889,7 +2883,6 @@ type Query {
     last: Int
   ): AccessTokenLogConnection!
   user(id: ID!): User
-  userByAccount(account: String!): User @deprecated(reason: "Use Query.userFromAccount instead. This method will be deleted in August 2020.")
   userFromAccount(account: String!): User
   users(
     """
@@ -3772,7 +3765,6 @@ type User implements Node {
   avatar(density: Int = 1, size: UserAvatarImageSize = MEDIUM): UserAvatarImage! @deprecated(reason: "Use avatarImage instead")
   avatarImage(density: Int = 1, size: UserAvatarImageSize = MEDIUM): UserAvatarImage!
   biography: String
-  cover(density: Int = 1, size: UserCoverImageSize = MEDIUM): UserCoverImage @deprecated(reason: "Use coverImage instead")
   coverImage(density: Int = 1, size: UserCoverImageSize = MEDIUM): UserCoverImage
 
   """
