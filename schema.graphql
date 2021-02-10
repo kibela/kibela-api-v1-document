@@ -2620,6 +2620,11 @@ type Query {
   feedSections(after: String, first: Int!, groupId: ID, kind: FeedKind): FeedSectionSimpleConnection!
   folder(id: ID!): Folder
   folders(
+    """
+    If true is specified, it returns active folders. If false is specified, it
+    returns archived folders. If it isn't specified, it returns both acitve or
+    archived folders.
+    """
     active: Boolean = true
 
     """
@@ -2641,7 +2646,16 @@ type Query {
     Returns the last _n_ elements from the list.
     """
     last: Int
+
+    """
+    Return the children of the specified folder. If null is specified, it returns root folders.
+    """
     parentFolderId: ID
+
+    """
+    Return the children of the specified folders. If null is specified, it returns root folders.
+    """
+    parentFolderIds: [ID!]
   ): FolderConnection!
   group(id: ID!): Group!
 
