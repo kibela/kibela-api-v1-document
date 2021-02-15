@@ -2595,6 +2595,7 @@ type Query {
   The current user of the session
   """
   currentUser: User
+  customEmojiFromCode(code: String!): CustomEmoji!
   customEmojis(
     """
     Returns the elements in the list that come after the specified cursor.
