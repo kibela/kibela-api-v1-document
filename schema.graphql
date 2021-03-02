@@ -2589,6 +2589,7 @@ type Query {
     path: String!
   ): Attachment!
   budget: Budget!
+  coeditToken(noteId: ID!): String! @deprecated(reason: "This is beta and internal feature.")
   comment(id: ID!): Comment
 
   """
