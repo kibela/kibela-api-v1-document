@@ -62,7 +62,7 @@ type AccessTokenConnection {
   """
   A list of nodes.
   """
-  nodes: [AccessToken]
+  nodes: [AccessToken!]!
 
   """
   Information to aid in pagination.
@@ -112,7 +112,7 @@ type AccessTokenLogConnection {
   """
   A list of nodes.
   """
-  nodes: [AccessTokenLog]
+  nodes: [AccessTokenLog!]!
 
   """
   Information to aid in pagination.
@@ -390,7 +390,7 @@ type CommentConnection {
   """
   A list of nodes.
   """
-  nodes: [Comment]
+  nodes: [Comment!]!
 
   """
   Information to aid in pagination.
@@ -491,7 +491,7 @@ type CommentReplyConnection {
   """
   A list of nodes.
   """
-  nodes: [CommentReply]
+  nodes: [CommentReply!]!
 
   """
   Information to aid in pagination.
@@ -894,7 +894,7 @@ type CustomEmojiConnection {
   """
   A list of nodes.
   """
-  nodes: [CustomEmoji]
+  nodes: [CustomEmoji!]!
 
   """
   Information to aid in pagination.
@@ -1396,7 +1396,7 @@ type FolderConnection {
   """
   A list of nodes.
   """
-  nodes: [Folder]
+  nodes: [Folder!]!
 
   """
   Information to aid in pagination.
@@ -1539,7 +1539,7 @@ type GroupConnection {
   """
   A list of nodes.
   """
-  nodes: [Group]
+  nodes: [Group!]!
 
   """
   Information to aid in pagination.
@@ -1623,7 +1623,7 @@ type ImportableUserConnection {
   """
   A list of nodes.
   """
-  nodes: [ImportableUser]
+  nodes: [ImportableUser!]!
 
   """
   Information to aid in pagination.
@@ -2284,7 +2284,7 @@ type NoteBrowsingHistoryConnection {
   """
   A list of nodes.
   """
-  nodes: [NoteBrowsingHistory]
+  nodes: [NoteBrowsingHistory!]!
 
   """
   Information to aid in pagination.
@@ -2320,7 +2320,7 @@ type NoteConnection {
   """
   A list of nodes.
   """
-  nodes: [Note]
+  nodes: [Note!]!
 
   """
   Information to aid in pagination.
@@ -2397,7 +2397,7 @@ type NoteTemplateConnection {
   """
   A list of nodes.
   """
-  nodes: [NoteTemplate]
+  nodes: [NoteTemplate!]!
 
   """
   Information to aid in pagination.
@@ -2446,7 +2446,7 @@ type NotificationConnection {
   """
   A list of nodes.
   """
-  nodes: [Notification]
+  nodes: [Notification!]!
 
   """
   Information to aid in pagination.
@@ -3129,7 +3129,7 @@ type ReviewableDraftCommentConnection {
   """
   A list of nodes.
   """
-  nodes: [ReviewableDraftComment]
+  nodes: [ReviewableDraftComment!]!
 
   """
   Information to aid in pagination.
@@ -3228,7 +3228,7 @@ type SearchResultConnection {
   """
   A list of nodes.
   """
-  nodes: [SearchResult]
+  nodes: [SearchResult!]!
 
   """
   Information to aid in pagination.
@@ -3938,7 +3938,7 @@ type UserConnection {
   """
   A list of nodes.
   """
-  nodes: [User]
+  nodes: [User!]!
 
   """
   Information to aid in pagination.
