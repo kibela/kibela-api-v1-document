@@ -3193,6 +3193,7 @@ enum Role {
 enum SearchDate {
   WITHIN_1_MONTH
   WITHIN_1_WEEK
+  WITHIN_1_YEAR
   WITHIN_3_DAYS
   WITHIN_6_MONTHS
 }
