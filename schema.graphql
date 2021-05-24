@@ -1436,6 +1436,7 @@ type Group implements Node {
   isDefault: Boolean!
   isJoined: Boolean!
   isPrivate: Boolean!
+  isVisibilityChangeable: Boolean!
   name: String!
   notes(
     """
