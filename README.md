@@ -79,7 +79,7 @@ https://my.kibe.la/settings/access_tokens
 
 MessagePackはバイナリの転送においてオーバーヘッドがなく、また多くのMessagePack処理系においてレスポンスボディのストリーミングデコードが可能であるためJSONよりも遥かに高速にリクエスト・レスポンス処理を行えます。Kibela Web APIを利用するツールは、特に運用フェーズではなるべくMessagePackを使うことを奨励します。
 
-なお、MessagePackを利用する場合、Kibela GraphQL schemaにおける `DateTime` 型はMessagePackのtimestamp typeにマップされます。timestamp typeの詳細にういてはお使いのMessagePackシリアライザのドキュメントを参照ください。
+なお、MessagePackを利用する場合、Kibela GraphQL schemaにおける `DateTime` 型はMessagePackのtimestamp typeにマップされます。timestamp typeの詳細についてはお使いのMessagePackシリアライザのドキュメントを参照ください。
 
 ## リクエストボディ
 
