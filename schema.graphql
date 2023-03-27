@@ -3809,6 +3809,11 @@ type Query {
     query: String!
 
     """
+    Array of search resource kinds. `NOTE` and/or `COMMENT` can be specified. `null` to get all.
+    """
+    resources: [SearchResourceKind!]
+
+    """
     Specify the sort order of search results.
     """
     sortBy: SearchSortKind = RELEVANT
@@ -4195,6 +4200,14 @@ enum SearchDate {
   WITHIN_1_YEAR
   WITHIN_3_DAYS
   WITHIN_6_MONTHS
+}
+
+"""
+Search target model type
+"""
+enum SearchResourceKind {
+  COMMENT
+  NOTE
 }
 
 """
