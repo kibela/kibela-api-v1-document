@@ -1729,6 +1729,7 @@ type FeedUserParcel {
 
 type Folder implements Node {
   archivedAt: DateTime
+  canBeManaged: Boolean!
   components: [Folder!]!
   createdAt: DateTime!
   descendantNotes(
@@ -4427,6 +4428,7 @@ enum Role {
   FULL_MEMBER
   GUEST
   OWNER
+  READ_ONLY @deprecated(reason: "Not implemented yet.")
 }
 
 enum SearchDate {
