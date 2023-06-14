@@ -352,6 +352,7 @@ type AssistantReferenceDocumentEdge {
 type AssistantReferenceSource implements Node {
   author: User!
   id: ID!
+  path: String!
   title: String!
   url: String!
 }
@@ -3741,8 +3742,8 @@ type Query {
     """
     last: Int
   ): GroupConnection!
-  assistantConversation(id: String!): AssistantConversation!
-  assistantMessage(id: String!): AssistantMessage!
+  assistantConversation(id: String!): AssistantConversation
+  assistantMessage(id: String!): AssistantMessage
   attachmentFromPath(
     """
     To get an attachment from its path (`/attachments/:id`) or URL
