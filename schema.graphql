@@ -1,4 +1,10 @@
 """
+!!!!! CAUTION !!!!!!
+This schema is no longer maintained and will be discontinued on September 30, 2023.
+If anyone wishes to continue publishing this schema, we welcome Issues.
+"""
+
+"""
 Personal access tokens
 """
 type AccessToken implements Node {
